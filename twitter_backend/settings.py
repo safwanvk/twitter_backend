@@ -25,7 +25,9 @@ SECRET_KEY = 'z-yw*m_eaomc87kw%x82z7tk(10x$7(b#m%fldgw%35qti9jqp'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
+LOGIN_URL = "/login"
+MAX_TWEET_LENGTH = 240
 
 
 # Application definition
