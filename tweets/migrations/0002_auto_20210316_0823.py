@@ -3,6 +3,7 @@
 from django.conf import settings
 from django.db import migrations, models
 import django.db.models.deletion
+import datetime
 
 
 class Migration(migrations.Migration):
@@ -16,7 +17,7 @@ class Migration(migrations.Migration):
         migrations.AddField(
             model_name='tweet',
             name='timestamp',
-            field=models.DateTimeField(auto_now_add=True, default=1),
+            field=models.DateTimeField(auto_now_add=True, default=datetime.datetime(2016, 11, 1, 7, 15, 12, 655838)),
             preserve_default=False,
         ),
         migrations.CreateModel(
