@@ -12,3 +12,10 @@ def login_view(request, *args, **kwargs):
         return Response({'msg': 'Success'}, status=200)
     
     return Response({'msg': 'Invalid Username'}, status=400)
+
+def logout_view(request, *args, **kwargs):
+    if request.method == "POST":
+        logout(request)
+        return Response({'msg': 'Success'}, status=200)
+    
+    return Response({'msg': 'Server Error'}, status=500)
