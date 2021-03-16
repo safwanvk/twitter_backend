@@ -1,11 +1,14 @@
 from django.shortcuts import render
 from rest_framework.response import Response
 from .serializer import TweetSerializer
-from rest_framework.decorators import api_view
+from rest_framework.decorators import api_view, authentication_classes, permission_classes
+from rest_framework.permissions import IsAuthenticated
 from .models import Tweet
 
 # Create your views here.
 @api_view(['POST']) # http method the client == POST
+# @authentication_classes([SessionAuthentication, MyCustomAuth])
+@permission_classes([IsAuthenticated])
 def tweet_create_view(request, *args, **kwargs):
     serializer = TweetSerializer(data=request.POST)
     if serializer.is_valid(raise_exception=True):
